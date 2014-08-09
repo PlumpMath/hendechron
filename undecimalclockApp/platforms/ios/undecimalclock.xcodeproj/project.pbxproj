@@ -41,6 +41,9 @@
 		14B0E730343D4EC3B5DBAAE2 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0571B774FC4397AFA87727 /* IonicKeyboard.m */; };
 		EBE4E6CFD60542B7995C484E /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E97B96329DD54274943B0DA1 /* UIWebViewExtension.m */; };
 		B3DD9ACED60A49159DD8FAD3 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E659B6783E34CE29B613EC6 /* CDVDevice.m */; };
+		0F198A3C3F83449B8EF11306 /* CDVTestFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = C05DA42C9315400DB7B8107F /* CDVTestFlight.m */; };
+		C45D39BAAB1C47FF887AB3F3 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D97918E8BB4172A8A87E79 /* libTestFlight.a */; };
+		FC0F193527D8448D9084410F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B07F5A519EC4137A5AC3178 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,13 @@
 		CDBADF10F08D4326832D763B /* UIWebViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIWebViewExtension.h"; path = "com.ionic.keyboard/UIWebViewExtension.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		2E659B6783E34CE29B613EC6 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		C9D438879E8E4C0BA427BA72 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		C05DA42C9315400DB7B8107F /* CDVTestFlight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVTestFlight.m"; path = "com.testflightapp.cordova-plugin/CDVTestFlight.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		17D97918E8BB4172A8A87E79 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libTestFlight.a"; path = "undecimalclock.app/Plugins/com.testflightapp.cordova-plugin/libTestFlight.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		2D3E5A1EFCE441FCB70274A3 /* TestFlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TestFlight.h"; path = "com.testflightapp.cordova-plugin/TestFlight.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		77DCC03A0D3340DFB6087471 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "com.testflightapp.cordova-plugin/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		7E29CEC556914B0A9B04D9A9 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "com.testflightapp.cordova-plugin/TestFlight+ManualSessions.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		16F2D3D396CE44CA8F4C5A58 /* CDVTestFlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVTestFlight.h"; path = "com.testflightapp.cordova-plugin/CDVTestFlight.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		3B07F5A519EC4137A5AC3178 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libz.dylib"; path = "usr/lib/libz.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,8 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
+				C45D39BAAB1C47FF887AB3F3 /* libTestFlight.a in Frameworks */,
+				FC0F193527D8448D9084410F /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +228,8 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				17D97918E8BB4172A8A87E79 /* libTestFlight.a */,
+				3B07F5A519EC4137A5AC3178 /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,6 +251,11 @@
 				CDBADF10F08D4326832D763B /* UIWebViewExtension.h */,
 				2E659B6783E34CE29B613EC6 /* CDVDevice.m */,
 				C9D438879E8E4C0BA427BA72 /* CDVDevice.h */,
+				C05DA42C9315400DB7B8107F /* CDVTestFlight.m */,
+				2D3E5A1EFCE441FCB70274A3 /* TestFlight.h */,
+				77DCC03A0D3340DFB6087471 /* TestFlight+AsyncLogging.h */,
+				7E29CEC556914B0A9B04D9A9 /* TestFlight+ManualSessions.h */,
+				16F2D3D396CE44CA8F4C5A58 /* CDVTestFlight.h */,
 			);
 			name = Plugins;
 			path = "undecimalclock/Plugins";
@@ -434,6 +453,7 @@
 				14B0E730343D4EC3B5DBAAE2 /* IonicKeyboard.m in Sources */,
 				EBE4E6CFD60542B7995C484E /* UIWebViewExtension.m in Sources */,
 				B3DD9ACED60A49159DD8FAD3 /* CDVDevice.m in Sources */,
+				0F198A3C3F83449B8EF11306 /* CDVTestFlight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +533,10 @@
 				);
 				PRODUCT_NAME = "undecimalclock";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/undecimalclock/Plugins/com.testflightapp.cordova-plugin\"",
+				);
 			};
 			name = Debug;
 		};
@@ -544,6 +568,10 @@
 				);
 				PRODUCT_NAME = "undecimalclock";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/undecimalclock/Plugins/com.testflightapp.cordova-plugin\"",
+				);
 			};
 			name = Release;
 		};
