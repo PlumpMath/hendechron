@@ -18,9 +18,14 @@ var d3clockfunc = function(scope, elem, attrs) {
 		margin = 50,
 		width = (clockRadius+margin)*2,
 		height = (clockRadius+margin)*2,
-		hourHandLength = 2*clockRadius/3,
-		minuteHandLength = clockRadius,
-		secondHandLength = clockRadius-12,
+		hourHandLength = 2*clockRadius/4,
+		hourHandWidth = 16,
+		hourHandBalance = 20,
+		minuteHandLength = clockRadius - 30 ,
+		minuteHandWidth = 8,
+		minuteHandBalance = 20,
+		secondHandWidth = 4,
+		secondHandLength = clockRadius,
 		secondHandBalance = 30,
 		secondTickStart = clockRadius;
 		secondTickLength = -10,
@@ -31,35 +36,61 @@ var d3clockfunc = function(scope, elem, attrs) {
 		hourLabelRadius = clockRadius - 40
 		hourLabelYOffset = 7;
 
-			
+		/*	
+		undeclarge = secselapsed (domain: 0~86399, range: 0~360)
+		undecmedium = secondselapsed / 7854.545 (domain: 0~10, range: 0~360)
+		undeecsmall = milliseconds elapsed % 66156.2021 -- (domain: 0~66155, range: 0~360) 
+	var hourScale = d3.scale.linear()
+		.domain([0,(86340 - 1)]) // from 0 to numhours - 1
+		.range([0,360 - (360 / 86340)]); // from 0 to 360 - (360 / numhours)
+
+	var minuteScale = d3.scale.linear()
+		.domain([0,(11-1)])
+		.range([0,360 - (360 / 11)]);
+
+	var secondScale = d3.scale.linear()
+		.domain([0,(66156.2021 - 1)])
+		.range([0,360 - (360 / 66156.2021)]);
+
+	
+		*/
 
 	var hourScale = d3.scale.linear()
-		.range([0,330])
-		.domain([0,11]);
+		.domain([0,(11 - 1)]) // from 0 to numhours - 1
+		.range([0,360 - (360 / 11)]); // from 0 to 360 - (360 / numhours)
 
-	var minuteScale = secondScale = d3.scale.linear()
-		.range([0,354])
-		.domain([0,59]);
+	var minuteScale = d3.scale.linear()
+		.domain([0,(7854.5455-1)])
+		.range([0,360 - (360 / 7854.5455)]);
+
+	var secondScale = d3.scale.linear()
+		.domain([0,(66156.2021 - 1)])
+		.range([0,360 - (360 / 66156.2021)]);
 
 	var handData = [
 		{
-			type:'hour',
+			type:'undeclarge',
 			value:0,
+			scale:hourScale,
 			length:-hourHandLength,
-			scale:hourScale
+			balance:hourHandBalance,
+			width:hourHandWidth
 		},
 		{
-			type:'minute',
+			type:'undecmedium',
 			value:0,
+			scale:minuteScale,
 			length:-minuteHandLength,
-			scale:minuteScale
+			balance:minuteHandBalance,
+			width:minuteHandWidth 
 		},
 		{
-			type:'second',
+			type:'undecsmall',
 			value:0,
-			length:-secondHandLength,
 			scale:secondScale,
-			balance:secondHandBalance
+			length:-secondHandLength,
+			balance:secondHandBalance,
+			width:secondHandWidth 
 		}
 	];
 
@@ -78,19 +109,20 @@ var d3clockfunc = function(scope, elem, attrs) {
 			.attr('transform','translate(' + (clockRadius + margin) + ',' + (clockRadius + margin) + ')');
 
 		//add marks for seconds
-		face.selectAll('.second-tick')
-			.data(d3.range(0,60)).enter()
+		face.selectAll('.undecsmall-tick')
+			.data(d3.range(5468 / 2,661560, 5468)).enter()
 				.append('line')
-				.attr('class', 'second-tick')
+				.attr('class', 'undecsmall-tick')
 				.attr('x1',0)
 				.attr('x2',0)
 				.attr('y1',secondTickStart)
 				.attr('y2',secondTickStart + secondTickLength)
 				.attr('transform',function(d){
-					return 'rotate(' + secondScale(d) + ')';
+					console.log("minutetick");
+					return 'rotate(' + ((secondScale(d / 10.0) + 180) % 360) + ')';
 				});
 		//and labels
-
+/*
 		face.selectAll('.second-label')
 			.data(d3.range(5,61,5))
 				.enter()
@@ -106,12 +138,12 @@ var d3clockfunc = function(scope, elem, attrs) {
 				.text(function(d){
 					return d;
 				});
-
+*/
 		//... and hours
-		face.selectAll('.hour-tick')
-			.data(d3.range(0,12)).enter()
+		face.selectAll('.undeclarge-tick')
+			.data(d3.range(0,11)).enter()
 				.append('line')
-				.attr('class', 'hour-tick')
+				.attr('class', 'undeclarge-tick')
 				.attr('x1',0)
 				.attr('x2',0)
 				.attr('y1',hourTickStart)
@@ -121,18 +153,20 @@ var d3clockfunc = function(scope, elem, attrs) {
 				});
 
 		face.selectAll('.hour-label')
-			.data(d3.range(3,13,3))
+			.data(d3.range(0,11))
 				.enter()
 				.append('text')
 				.attr('class', 'hour-label')
 				.attr('text-anchor','middle')
 				.attr('x',function(d){
-					return hourLabelRadius*Math.sin(hourScale(d)*radians);
+					return hourLabelRadius*Math.sin(hourScale(d)*radians + Math.PI);
 				})
 				.attr('y',function(d){
-					return -hourLabelRadius*Math.cos(hourScale(d)*radians) + hourLabelYOffset;
+					return -hourLabelRadius*Math.cos(hourScale(d)*radians + Math.PI) + hourLabelYOffset;
 				})
 				.text(function(d){
+					if(d == "0") return ":";
+					if(d == "10") return "Ø";
 					return d;
 				});
 
@@ -143,42 +177,59 @@ var d3clockfunc = function(scope, elem, attrs) {
 			.append('circle').attr('class','hands-cover')
 				.attr('x',0)
 				.attr('y',0)
-				.attr('r',clockRadius/20);
+				.attr('r',clockRadius/50);
 
-		hands.selectAll('line')
+		hands.selectAll('path')
 			.data(handData)
 				.enter()
-				.append('line')
+				.append('path')
 				.attr('class', function(d){
-					return d.type + '-hand';
+					return d.type + '-hand hand';
 				})
-				.attr('x1',0)
-				.attr('y1',function(d){
-					return d.balance ? d.balance : 0;
-				})
-				.attr('x2',0)
-				.attr('y2',function(d){
-					return d.length;
+				.attr('d', function(d) {
+					return "M" + (d.width / 2.0) + " " + d.balance + " L" + (d.width / -2.0) + " " + d.balance + " L0 " + d.length + " Z"
 				})
 				.attr('transform',function(d){
-					return 'rotate('+ d.scale(d.value) +')';
+					return 'rotate(' + ((d.scale(d.value) + 180) % 360) + ')';
 				});
 	}
 
 	function moveHands(){
-		d3.select('#clock-hands').selectAll('line')
+		d3.select('#clock-hands').selectAll('path')
 		.data(handData)
 			.transition()
+			.ease("linear")
 			.attr('transform',function(d){
-				return 'rotate('+ d.scale(d.value) +')';
+				return 'rotate(' + ((d.scale(d.value) + 180) % 360) + ')';
 			});
 	}
 
 	function updateData(){
 		var t = new Date();
-		handData[0].value = (t.getHours() % 12) + t.getMinutes()/60 ;
-		handData[1].value = t.getMinutes();
-		handData[2].value = t.getSeconds();
+		var elapsedSeconds = (3600 * t.getHours()) + (60 * t.getMinutes()) + t.getSeconds();
+		var elapsedMilliseconds = (elapsedSeconds * 1000) + t.getMilliseconds();
+
+		/* 
+		in one day, there are 11 undechours 
+		there are 11 
+		The hour hand should turn 360 degrees in a day; the minute hand should do 11 rotations of 360 degrees in a day. The second hand should do 1331 360 degree rotations in a day.
+		
+		24hour  =  secondselapsed  / 3600 -- secs in an hour (domain: 0~23, range: 0~360)
+		min = secondselapsed % 3600  -- secs in an hour (domain: 0~3599, range: 0~360)
+		sec = milliseconds elapsed % 60,000 -- millisecs in a minute (domain: 0~59999, range: 0~360)
+		undeclarge = secselapsed (domain: 0~86399, range: 0~360)
+		undecmedium = secondselapsed / 7854.545 (domain: 0~10, range: 0~360)
+		undeecsmall = milliseconds elapsed % 66156.2021 -- (domain: 0~66155, range: 0~360)
+
+		handData[0].value = elapsedSeconds / 86400 * 11;
+		handData[1].value = elapsedSeconds / 7854.5455;
+		handData[2].value = elapsedMilliseconds % 66156.2021;
+		*/
+
+		handData[0].value = elapsedSeconds / 86400.0 * 11.0; //from 0 to 11
+		handData[1].value = elapsedSeconds % 7854.5455; //11 rotations in a day
+		handData[2].value = Math.round(elapsedMilliseconds % 66156.2021) + 273.375;
+
 	}
 
 	drawClock();
@@ -189,7 +240,8 @@ var d3clockfunc = function(scope, elem, attrs) {
 //		console.log(handData);
 		updateData();
 		moveHands();
-	}, 1000);
+	}, 100);
+	//}, 546.75);
 
 	d3.select(self.frameElement).style("height", height + "px");
 }

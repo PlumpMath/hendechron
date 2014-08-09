@@ -1,16 +1,17 @@
+/* @override 
+	http://192.168.1.13:8100/css/d3clock.css */
 
-body {
-  background: #fff;
-}
 
 .d3clock-wrapper {
-	text-align: center;
+  background: linear-gradient(80deg, #ececec 0%, #fcfcfc 30.3%, #ededed 100%) #fff !important;
+  text-align: center;
+  color: #333;
 }
 
 
 svg{
-	stroke: #000;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	stroke: #333;
+	font-family: 'Montserrat', sans-serif;
 }
 
 #rim {
@@ -19,33 +20,35 @@ svg{
   stroke-width: 3px;
 }
 
-.second-hand{
-	stroke-width:3;
 
+.hand {
+	stroke-width: 2;
+	fill: #333;
+	stroke:  #333;
+}
+	
+.undecsmall-hand{
 }
 
-.minute-hand{
-	stroke-width:8;
-	stroke-linecap:round;
+.undecmedium-hand{
 }
 
-.hour-hand{
-	stroke-width:12;
-	stroke-linecap:round;
+.undeclarge-hand{
 }
 
 .hands-cover{
-	stroke-width:3;
-	fill:#fff;
+	stroke-width:1;
+	fill:#FFF;
+	stroke: #FFF;
 }
 
-.second-tick{
-	stroke-width:3;
-	fill:#000;	
+.undecsmall-tick{
+	stroke-width:1.25;
+	fill:#333;	
 }
 
-.hour-tick{
-	stroke-width:8; //same as the miute hand
+.undeclarge-tick{
+	stroke-width:4; 
 }
 
 .second-label{
@@ -53,7 +56,7 @@ svg{
 }
 
 .hour-label{
-	font-size: 24px;
+	font-size: 18px;
 }
 
 
