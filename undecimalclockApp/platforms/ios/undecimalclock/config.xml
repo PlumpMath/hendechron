@@ -41,7 +41,4 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
-    <feature name="TestFlightSDK">
-        <param name="ios-package" value="CDVTestFlight" />
-    </feature>
 </widget>
