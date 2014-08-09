@@ -15,10 +15,6 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
                         }
                     ],
                     "/widget": []
@@ -27,12 +23,7 @@
             "framework": {
                 "parents": {
                     "libz.dylib": [],
-                    "CoreGraphics.framework": [
-                        {
-                            "xml": "false",
-                            "count": 1
-                        }
-                    ]
+                    "CoreGraphics.framework": []
                 }
             }
         }
@@ -42,9 +33,6 @@
             "PACKAGE_NAME": "com.ionicframework.undecimalclock838669"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ionicframework.undecimalclock838669"
-        },
-        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.undecimalclock838669"
         }
     },
