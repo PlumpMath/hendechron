@@ -502,7 +502,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Hendechron;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F555FBDE-1B9F-4429-B181-3EFCFF18EDBE";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -536,7 +536,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Hendechron;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F555FBDE-1B9F-4429-B181-3EFCFF18EDBE";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
