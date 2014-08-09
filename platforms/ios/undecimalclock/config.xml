@@ -41,6 +41,12 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
+    <icon gap:platform="ios" height="60" src="res/ios/icon/icon-60.png" width="60" />
+    <icon gap:platform="ios" height="120" src="res/ios/icon/icon-60@2x.png" width="120" />
+    <icon gap:platform="ios" height="76" src="res/ios/icon/icon-76.png" width="76" />
+    <icon gap:platform="ios" height="152" src="res/ios/icon/icon-76@2x.png" width="152" />
+    <gap:splash gap:platform="ios" height="1136" src="res/ios/splash/Default-568h@2x~iphone.png" width="640" />
+    <gap:splash gap:platform="ios" height="960" src="res/ios/splash/Default@2x~iphone.png" width="640" />
     <feature name="SplashScreen">
         <param name="ios-package" value="CDVSplashScreen" />
         <param name="onload" value="true" />

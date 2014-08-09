@@ -15,7 +15,10 @@
   <preference name="BackupWebStorage" value="none"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
-  </feature>
+</feature>
+<feature name="SplashScreen">
+	    <param name="ios-package" value="CDVSplashScreen" />
+	</feature>
 	<!-- iOS 7.0+ -->
 	<!-- iPhone / iPod Touch  -->
 	<icon src="res/ios/icon/icon-60.png" gap:platform="ios" width="60" height="60" />

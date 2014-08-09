@@ -27,7 +27,7 @@ module.exports.metadata =
 {
     "com.ionic.keyboard": "1.0.2",
     "org.apache.cordova.device": "0.2.10",
-    "org.apache.cordova.splashscreen": "0.3.1"
+    "org.apache.cordova.splashscreen": "0.3.3-dev"
 }
 // BOTTOM OF METADATA
 });
