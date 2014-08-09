@@ -2,14 +2,29 @@
 	http://192.168.1.13:8100/css/d3clock.css */
 
 
+ion-content {
+	/*background-color: red !important;*/
+		background: linear-gradient(70deg, #ebebeb 0%, #fcfcfc 33.3%, #efeeee 100%) #fff !important;
+	
+}
 .d3clock-wrapper {
-  background: linear-gradient(80deg, #ececec 0%, #fcfcfc 30.3%, #ededed 100%) #fff !important;
   text-align: center;
   color: #333;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position:  relative;
 }
 
 
-svg{
+svg {
+	margin-left:auto;
+	margin-right: auto;
+	display: block;
+	position:relative;
+	top:50%;
+	left: 0px;
 	stroke: #333;
 	font-family: 'Montserrat', sans-serif;
 }

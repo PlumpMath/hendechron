@@ -7,9 +7,10 @@ var d3clockfunc = function(scope, elem, attrs) {
 
 	var onWindowResize = function() {
 		var svg = elem.find("svg")[0];
-		var targetDim = Math.min(window.innerWidth, window.innerHeight - 50);
+		var targetDim = Math.min(window.innerWidth, window.innerHeight);
 		svg.setAttribute('height', targetDim);
 		svg.setAttribute('width', targetDim);
+		svg.style.marginTop = targetDim / -2.0;
 		console.log(svg);
 	};
 
@@ -19,7 +20,7 @@ var d3clockfunc = function(scope, elem, attrs) {
 		width = (clockRadius+margin)*2,
 		height = (clockRadius+margin)*2,
 		hourHandLength = 2*clockRadius/4,
-		hourHandWidth = 16,
+		hourHandWidth = 10,
 		hourHandBalance = 20,
 		minuteHandLength = clockRadius - 30 ,
 		minuteHandWidth = 8,
