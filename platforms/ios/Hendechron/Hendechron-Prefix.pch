@@ -17,7 +17,7 @@
  under the License.
  */
 //
-// Prefix header for all source files of the 'undecimalclock' target in the 'undecimalclock' project
+// Prefix header for all source files of the 'Hendechron' target in the 'Hendechron' project
 //
 
 #ifdef __OBJC__

@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5704AA35-3E6F-4E25-BDC3-50F3D760C596</string>
+	<string>BAC2AF7E-52A6-4B2D-BA3E-02703E333DC2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>undecimalclock</string>
+	<string>Hendechron</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>544FD03E-7C9E-4236-A405-C3F7D3275055</key>
-		<string>https://github.com/provolot/undecimalclock.git</string>
+		<key>8C582FA9-AFB7-4E7F-8AC2-01CD62482AE5</key>
+		<string>https://github.com/provolot/hendechron.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>undecimalclockApp/platforms/ios/undecimalclock.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/Hendechron.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>544FD03E-7C9E-4236-A405-C3F7D3275055</key>
-		<string>../../../../..</string>
+		<key>8C582FA9-AFB7-4E7F-8AC2-01CD62482AE5</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/provolot/undecimalclock.git</string>
+	<string>https://github.com/provolot/hendechron.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>544FD03E-7C9E-4236-A405-C3F7D3275055</string>
+	<string>8C582FA9-AFB7-4E7F-8AC2-01CD62482AE5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>544FD03E-7C9E-4236-A405-C3F7D3275055</string>
+			<string>8C582FA9-AFB7-4E7F-8AC2-01CD62482AE5</string>
 			<key>IDESourceControlWCCName</key>
-			<string>undecimalclock</string>
+			<string>hendechron</string>
 		</dict>
 	</array>
 </dict>
