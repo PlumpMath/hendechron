@@ -1,5 +1,6 @@
 /* @override 
-	http://192.168.1.13:8100/css/d3clock.css */
+	http://192.168.1.13:8100/css/d3clock.css
+	http://localhost:8888/undecimalclockApp/www/css/d3clock.css */
 
 
 ion-content {
@@ -27,6 +28,7 @@ svg {
 	left: 0px;
 	stroke: #333;
 	font-family: 'Montserrat', sans-serif;
+	/*-webkit-transform: rotate(-10deg) skew(10deg,20deg)  ; */
 }
 
 #rim {
